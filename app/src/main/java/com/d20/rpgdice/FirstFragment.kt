@@ -10,7 +10,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.d20.rpgdice.databinding.FragmentFirstBinding
-import kotlin.math.log
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -31,9 +30,6 @@ class FirstFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        //Obtiene contexto.
-        appContext = requireContext().applicationContext
-
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
         return binding.root
 
@@ -43,6 +39,8 @@ class FirstFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.ibDice.setOnClickListener {
+            var mediaPlayer: MediaPlayer? = MediaPlayer.create(context, R.raw.d20roll)
+            mediaPlayer?.start()
             rollDice()
         }
     }
@@ -56,6 +54,12 @@ class FirstFragment : Fragment() {
         val random = java.util.Random()
         val randomNumber = random.nextInt(20) + 1
         view?.findViewById<TextView>(R.id.tv_resultado)?.text = randomNumber.toString()
+    }
+
+    // extension function to get raw resource uri by resource name
+    private fun Context.rawResourceUriByName(fileName:String):Uri{
+        // get resource uri from res/raw folder by file name
+        return Uri.parse("android.resource://$packageName/raw/$fileName")
     }
 
 }
