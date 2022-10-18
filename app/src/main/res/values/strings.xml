@@ -9,5 +9,24 @@
     <string name="a_d20_drawing">A d20 drawing.</string>
     <string name="fab_description">A round button for share the app.</string>
     <string name="tap_the_dice">Tap the dice!</string>
-    <string name="twenty">20</string>
+    <string name="one">1</string>
+    <!-- Arrays -->
+    <string-array name="on_critical_array">
+        <item>It\'s a critical!</item>
+        <item>Yeah!</item>
+        <item>Slay.Them.All!</item>
+        <item>Hold my fireball.</item>
+    </string-array>
+    <!-- On Fail-->
+    <string-array name="on_fail_array">
+        <item>It\'s a fail…</item>
+        <item>The worst result possible.</item>
+        <item>Haha!</item>
+        <item>You roll like a baby!</item>
+    </string-array>
+    <!-- On Neutral -->
+    <string-array name="on_neutral_array">
+        <item>They see me rolling…</item>
+        <item>Pursuit your dreams!</item>
+    </string-array>
 </resources>

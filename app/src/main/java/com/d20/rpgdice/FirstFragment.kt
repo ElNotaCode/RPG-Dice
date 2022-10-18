@@ -2,7 +2,6 @@ package com.d20.rpgdice
 
 import android.content.Context
 import android.media.MediaPlayer
-import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -39,9 +38,16 @@ class FirstFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.ibDice.setOnClickListener {
-            var mediaPlayer: MediaPlayer? = MediaPlayer.create(context, R.raw.d20roll)
-            mediaPlayer?.start()
-            rollDice()
+            //TIRADA
+            //1.Hace el sonido de dado
+            rollDiceSound()
+            //2.Se saca el resultado Int
+            val diceResult = getRandom(20)
+            //3.Se muestra por pantalla
+            view?.findViewById<TextView>(R.id.tv_resultado)?.text = diceResult.toString()
+            //4.Se muestra la frase dependiendo del resultado
+            view?.findViewById<TextView>(R.id.tv_sentence)?.text = getSentence(diceResult)
+
         }
     }
 
@@ -50,16 +56,35 @@ class FirstFragment : Fragment() {
         _binding = null
     }
 
-    private fun rollDice(){
+    private fun getRandom(max :Int): Int{
         val random = java.util.Random()
-        val randomNumber = random.nextInt(20) + 1
-        view?.findViewById<TextView>(R.id.tv_resultado)?.text = randomNumber.toString()
+        return random.nextInt(max) + 1
     }
 
-    // extension function to get raw resource uri by resource name
-    private fun Context.rawResourceUriByName(fileName:String):Uri{
-        // get resource uri from res/raw folder by file name
-        return Uri.parse("android.resource://$packageName/raw/$fileName")
+    private fun getRandomPosition(max :Int): Int{
+        val random = java.util.Random()
+        return random.nextInt(max)
+    }
+
+    private fun rollDiceSound(){
+        //TODO: Inicializar en otro lado y hacer realease()
+        var mediaPlayer: MediaPlayer? = MediaPlayer.create(context, R.raw.d20roll)
+        mediaPlayer?.start()
+    }
+
+    private fun getSentence(diceResult: Int): String{
+        if(diceResult == 20){
+            val rand = getRandomPosition(resources.getStringArray(R.array.on_critical_array).size)
+            return resources.getStringArray(R.array.on_critical_array)[rand]
+        }
+
+        if (diceResult == 1){
+            val rand = getRandomPosition(resources.getStringArray(R.array.on_fail_array).size)
+            return resources.getStringArray(R.array.on_fail_array)[rand]
+        }
+
+        val rand = getRandomPosition(resources.getStringArray(R.array.on_neutral_array).size)
+        return resources.getStringArray(R.array.on_neutral_array)[rand]
     }
 
 }

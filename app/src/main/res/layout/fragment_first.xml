@@ -8,13 +8,14 @@
     tools:context=".FirstFragment">
 
     <TextView
-        android:id="@+id/tv_app_name"
+        android:id="@+id/tv_sentence"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="132dp"
         android:layout_marginBottom="16dp"
         android:fontFamily="sans-serif-condensed"
         android:text="@string/tap_the_dice"
+        android:textAlignment="center"
         android:textColor="@color/red_tittles"
         android:textSize="40sp"
         android:textStyle="bold"
@@ -47,13 +48,13 @@
         android:layout_marginTop="92dp"
         android:layout_marginEnd="170dp"
         android:layout_marginBottom="66dp"
-        android:text="@string/twenty"
+        android:text="@string/one"
         android:textAlignment="center"
         android:textColor="@color/gray_texts"
         android:textSize="70sp"
         app:layout_constraintBottom_toTopOf="@+id/ib_dice"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_app_name" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_sentence" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
