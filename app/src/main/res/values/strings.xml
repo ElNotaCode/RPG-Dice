@@ -16,6 +16,10 @@
         <item>Yeah!</item>
         <item>Slay.Them.All!</item>
         <item>Hold my fireball.</item>
+        <item>Ride the Dragon!</item>
+        <item>We\'re gonna need a bigger bad guy...</item>
+        <item>UwU *critical cringe!*</item>
+        <item>Yes they\'re natural.</item>
     </string-array>
     <!-- On Fail-->
     <string-array name="on_fail_array">
@@ -23,10 +27,39 @@
         <item>The worst result possible.</item>
         <item>Haha!</item>
         <item>You roll like a baby!</item>
+        <item>Get well soon.</item>
+        <item>See you space cowboy...</item>
+        <item>Shit happens.</item>
+        <item>¯\_(ツ)_/¯</item>
+        <item>As a free action, can I regret my life choices?</item>
+        <item>Why is the DM smiling?</item>
     </string-array>
     <!-- On Neutral -->
     <string-array name="on_neutral_array">
         <item>They see me rolling…</item>
         <item>Pursuit your dreams!</item>
+        <item>Where is the Dragon?</item>
+        <item>There is fun in funeral!</item>
+        <item>If you\'r character is hungry, ask your DM if cannibalism is an option in this game.</item>
+        <item>Definitely not a mimic!</item>
+        <item>It\'s drunk an alignment?</item>
+        <item>If you can\'t beat the undead, join them!</item>
+        <item>Never trust clerics.</item>
+        <item>If eventing fails, you just need to outrun the paladin.</item>
+        <item>The power of imagination!</item>
     </string-array>
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
 </resources>
