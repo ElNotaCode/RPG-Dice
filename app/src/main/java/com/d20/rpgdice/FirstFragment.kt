@@ -37,12 +37,12 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var rollDiceSound: MediaPlayer? = MediaPlayer.create(context, R.raw.d20roll)
+        rollDiceMediaPlayer = MediaPlayer.create(context, R.raw.d20roll)
 
         binding.ibDice.setOnClickListener {
             //TIRADA
             //1.Hace el sonido de dado
-            startSound(rollDiceSound)
+            startSound(rollDiceMediaPlayer)
             //2.Se saca el resultado Int
             val diceResult = getRandom(20)
             //3.Se muestra por pantalla

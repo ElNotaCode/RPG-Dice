@@ -1,10 +1,7 @@
 package com.d20.rpgdice
 
-import android.content.Context
-import android.media.MediaPlayer
-import android.net.Uri
+import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -31,12 +28,25 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-        binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+        binding.fab.setOnClickListener {
+            share()
         }
 
     }
+
+    private fun share() {
+        val intent = Intent().apply {
+            action = Intent.ACTION_SEND
+            putExtra(Intent.EXTRA_TEXT,resources.getString(R.string.share_text))
+            type = "text/plain"
+            putExtra(Intent.EXTRA_TITLE,resources.getString(R.string.share_extra_text))
+        }
+        val shareIntent = Intent.createChooser(intent,null)
+        startActivity(shareIntent)
+    }
+
+    //mejora share
+    //https://www.youtube.com/watch?v=_ij640TqtMo
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.

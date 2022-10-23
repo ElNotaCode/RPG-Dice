@@ -10,6 +10,8 @@
     <string name="fab_description">A round button for share the app.</string>
     <string name="tap_the_dice">Tap the dice!</string>
     <string name="one">1</string>
+    <string name="share_text">Share RPG Dice!</string>
+    <string name="share_extra_text">Let\'s go to the dungeon...</string>
     <!-- Arrays -->
     <string-array name="on_critical_array">
         <item>It\'s a critical!</item>
