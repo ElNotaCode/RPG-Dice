@@ -12,6 +12,11 @@
     <string name="one">1</string>
     <string name="share_text">Share RPG Dice!</string>
     <string name="share_extra_text">Let\'s go to the dungeon...</string>
+    <!-- Settings Strings -->
+    <string name="dice_sound_settings">- Dice sound when tapping</string>
+    <string name="on_critical_sound_settings">- Critical make sounds</string>
+    <string name="on_fail_sound_settings">- Fails make sounds</string>
+    <string name="save_settings">Save</string>
     <!-- Arrays -->
     <string-array name="on_critical_array">
         <item>It\'s a critical!</item>
@@ -33,7 +38,6 @@
         <item>See you space cowboy...</item>
         <item>Shit happens.</item>
         <item>¯\_(ツ)_/¯</item>
-        <item>As a free action, can I regret my life choices?</item>
         <item>Why is the DM smiling?</item>
     </string-array>
     <!-- On Neutral -->
@@ -42,13 +46,14 @@
         <item>Pursuit your dreams!</item>
         <item>Where is the Dragon?</item>
         <item>There is fun in funeral!</item>
-        <item>If you\'r character is hungry, ask your DM if cannibalism is an option in this game.</item>
+        <item>If your character is hungry, ask your DM if cannibalism is an option in this game.</item>
         <item>Definitely not a mimic!</item>
         <item>It\'s drunk an alignment?</item>
         <item>If you can\'t beat the undead, join them!</item>
         <item>Never trust clerics.</item>
-        <item>If eventing fails, you just need to outrun the paladin.</item>
+        <item>If everything fails, you just need to outrun the paladin.</item>
         <item>The power of imagination!</item>
+        <item>As a free action, can I regret my life choices?</item>
     </string-array>
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>

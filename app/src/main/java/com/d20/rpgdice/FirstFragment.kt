@@ -17,7 +17,6 @@ class FirstFragment : Fragment() {
 
     private var _binding: FragmentFirstBinding? = null
     private lateinit var rollDiceMediaPlayer: MediaPlayer
-    private lateinit var appContext: Context
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -37,11 +36,11 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        rollDiceMediaPlayer = MediaPlayer.create(context, R.raw.d20roll)
-
         binding.ibDice.setOnClickListener {
             //TIRADA
             //1.Hace el sonido de dado
+            //TODO: Poner de manera correcta
+            rollDiceMediaPlayer = MediaPlayer.create(context, R.raw.d20roll)
             startSound(rollDiceMediaPlayer)
             //2.Se saca el resultado Int
             val diceResult = getRandom(20)
