@@ -14,6 +14,22 @@ class Prefs(private val context:Context) {
         return storage.getBoolean(Constants.DICE_SOUND_IND, true)
     }
 
+    fun setCriticalSoundInd(criticalSoundInd:Boolean){
+        storage.edit().putBoolean(Constants.CRITICAL_SOUND_IND,criticalSoundInd).apply()
+    }
+
+    fun getCriticalSoundInd():Boolean{
+        return storage.getBoolean(Constants.CRITICAL_SOUND_IND, true)
+    }
+
+    fun setFailSoundInd(failSoundInd:Boolean){
+        storage.edit().putBoolean(Constants.FAIL_SOUND_IND,failSoundInd).apply()
+    }
+
+    fun getFailSoundInd():Boolean{
+        return storage.getBoolean(Constants.FAIL_SOUND_IND, true)
+    }
+
 
 
 }

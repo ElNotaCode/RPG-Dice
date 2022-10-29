@@ -1,6 +1,5 @@
 package com.d20.rpgdice
 
-import android.content.Context
 import android.media.MediaPlayer
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -17,6 +16,8 @@ class FirstFragment : Fragment() {
 
     private var _binding: FragmentFirstBinding? = null
     private lateinit var rollDiceMediaPlayer: MediaPlayer
+    private lateinit var criticalMediaPlayer: MediaPlayer
+    private lateinit var failMediaPlayer: MediaPlayer
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -40,14 +41,17 @@ class FirstFragment : Fragment() {
             //TIRADA
             //1.Hace el sonido de dado
             //TODO: Poner de manera correcta
-            rollDiceMediaPlayer = MediaPlayer.create(context, R.raw.d20roll)
-            startSound(rollDiceMediaPlayer)
+            if(RpgDiceApplication.prefs.getDiceSoundInd()) {
+                rollDiceMediaPlayer = MediaPlayer.create(context, R.raw.d20roll)
+                startSound(rollDiceMediaPlayer)
+            }
             //2.Se saca el resultado Int
             val diceResult = getRandom(20)
             //3.Se muestra por pantalla
             view?.findViewById<TextView>(R.id.tv_resultado)?.text = diceResult.toString()
             //4.Se muestra la frase dependiendo del resultado
             view?.findViewById<TextView>(R.id.tv_sentence)?.text = getSentence(diceResult)
+            //5.Se reproduce el sonido dependiendo del resultado
 
         }
     }
