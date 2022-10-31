@@ -28,8 +28,10 @@ class FirstFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
+        rollDiceMediaPlayer = MediaPlayer.create(context, R.raw.d20roll)
+        criticalMediaPlayer = MediaPlayer.create(context, R.raw.critical1)
+        failMediaPlayer = MediaPlayer.create(context, R.raw.fail1)
         return binding.root
 
     }
@@ -39,14 +41,31 @@ class FirstFragment : Fragment() {
 
         binding.ibDice.setOnClickListener {
             //TIRADA
-            //1.Hace el sonido de dado
-            //TODO: Poner de manera correcta
-            if(RpgDiceApplication.prefs.getDiceSoundInd()) {
-                rollDiceMediaPlayer = MediaPlayer.create(context, R.raw.d20roll)
-                startSound(rollDiceMediaPlayer)
-            }
-            //2.Se saca el resultado Int
+            //1.Se saca el resultado Int
             val diceResult = getRandom(20)
+            //2.Hace el sonido de dado
+            //TODO: Poner de manera correcta
+            when(diceResult){
+                20 ->{
+                    if(RpgDiceApplication.prefs.getCriticalSoundInd()) {
+                        startSound(criticalMediaPlayer)
+                    }else if(RpgDiceApplication.prefs.getDiceSoundInd()) {
+                        startSound(rollDiceMediaPlayer)
+                    }
+                }
+                1 ->{
+                    if(RpgDiceApplication.prefs.getFailSoundInd()) {
+                        startSound(failMediaPlayer)
+                    }else if(RpgDiceApplication.prefs.getDiceSoundInd()) {
+                        startSound(rollDiceMediaPlayer)
+                    }
+                }
+                else -> {
+                    if(RpgDiceApplication.prefs.getDiceSoundInd()) {
+                        startSound(rollDiceMediaPlayer)
+                    }
+                }
+            }
             //3.Se muestra por pantalla
             view?.findViewById<TextView>(R.id.tv_resultado)?.text = diceResult.toString()
             //4.Se muestra la frase dependiendo del resultado
