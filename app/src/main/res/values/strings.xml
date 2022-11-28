@@ -1,16 +1,19 @@
 <resources>
     <string name="app_name">RPG Dice</string>
     <string name="action_settings">Settings</string>
+    <string name="action_share">Share</string>
     <!-- Strings used for fragments for navigation -->
     <string name="next">Next</string>
     <string name="previous">Previous</string>
     <!-- My Strings-->
     <string name="a_d20_drawing">A d20 drawing.</string>
+    <string name="a_d6_drawing">A d6 drawing.</string>
     <string name="fab_description">A round button for share the app.</string>
     <string name="tap_the_dice">Tap the dice!</string>
     <string name="one">1</string>
     <string name="share_text">Share RPG Dice!</string>
     <string name="share_extra_text">Let\'s go to the dungeon...</string>
+    <string name="select_dice">Select your dice!</string>
     <!-- Settings Strings -->
     <string name="dice_sound_settings">- Dice sound when tapping</string>
     <string name="on_critical_sound_settings">- Critical make sounds</string>

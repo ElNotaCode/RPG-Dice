@@ -4,8 +4,14 @@
     tools:context="com.d20.rpgdice.MainActivity">
     <item
         android:id="@+id/action_settings"
-        android:orderInCategory="100"
+        android:orderInCategory="2"
         android:background="@color/white"
         android:title="@string/action_settings"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_share"
+        android:orderInCategory="1"
+        android:background="@color/white"
+        android:title="@string/action_share"
         app:showAsAction="never" />
 </menu>

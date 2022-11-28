@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
 
         binding.fab.setOnClickListener {
-            share()
+            findNavController(R.id.nav_host_fragment_content_main).navigate(R.id.to_SecondFragment)
         }
 
     }
@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         startActivity(shareIntent)
     }
 
-    //mejora share
+    //TODO: mejora share
     //https://www.youtube.com/watch?v=_ij640TqtMo
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -61,6 +61,10 @@ class MainActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.action_settings -> {
                 findNavController(R.id.nav_host_fragment_content_main).navigate(R.id.to_SettingsFragment)
+                true
+            }
+            R.id.action_share -> {
+                share()
                 true
             }
             else -> super.onOptionsItemSelected(item)
