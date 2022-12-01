@@ -14,6 +14,8 @@
     <string name="share_text">Share RPG Dice!</string>
     <string name="share_extra_text">Let\'s go to the dungeon...</string>
     <string name="select_dice">Select your dice!</string>
+    <string name="plus">Plus button.</string>
+    <string name="minus">Minus button.</string>
     <!-- Settings Strings -->
     <string name="dice_sound_settings">- Dice sound when tapping</string>
     <string name="on_critical_sound_settings">- Critical make sounds</string>

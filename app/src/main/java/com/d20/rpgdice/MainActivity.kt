@@ -28,10 +28,6 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-        binding.fab.setOnClickListener {
-            findNavController(R.id.nav_host_fragment_content_main).navigate(R.id.to_SecondFragment)
-        }
-
     }
 
     private fun share() {
