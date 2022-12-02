@@ -9,16 +9,17 @@
         android:id="@+id/to_SettingsFragment"
         app:destination="@+id/SettingsFragment"
         />
-    <action
-        android:id="@+id/to_SecondFragment"
-        app:destination="@+id/SecondFragment"
-        />
 
     <fragment
         android:id="@+id/FirstFragment"
         android:name="com.d20.rpgdice.FirstFragment"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_first">
+
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@+id/SecondFragment"
+            />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
